@@ -1,0 +1,10 @@
+﻿Name: SEO Kit
+AntiForgery: enabled
+Author: Josh Berry
+Website: http://berryweblabs.com
+Version: 1.9
+OrchardVersion: 1.9
+Description: SEO Kit provides a collection of tools to help with search engine optimization
+FeatureName: SEO Title and Meta
+Category: SEO
+FeatureDescription: Define title and meta tags for content items.

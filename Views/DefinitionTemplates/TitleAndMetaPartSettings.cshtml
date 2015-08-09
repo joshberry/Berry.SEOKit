@@ -1,0 +1,26 @@
+﻿@model Berry.SEOKit.Settings.TitleAndMetaPartSettings
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.DefaultTitle, T("Default Title Value"))
+        @Html.TextBoxFor(m => m.DefaultTitle, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultTitle)
+        @Html.Hint(T("The default title is used to generate a title tag for the content item. Tokens can be used to dynamically build the title."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowTitle)
+        @Html.LabelFor(m => m.AllowTitle, T("Allow Title Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default title tags can be manually overriden on each content item."))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DefaultDescription, T("Default Description Value"))
+        @Html.TextBoxFor(m => m.DefaultDescription, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultDescription)
+        @Html.Hint(T("The default description is used to generate a meta description tag for the content item. Tokens can be used to dynamically build the description."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowDescription)
+        @Html.LabelFor(m => m.AllowDescription, T("Allow Description Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default description meta data can be manually overriden on each content item."))
+    </div>
+</fieldset>

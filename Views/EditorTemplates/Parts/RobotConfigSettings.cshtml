@@ -1,0 +1,18 @@
+﻿@model Berry.SEOKit.Models.RobotConfigSettingsPart
+
+@{
+    var robotsUrl = Url.Action("Index", new { controller = "Robots", area = "Berry.SEOKit" });
+}
+
+<fieldset>
+    <legend>@T("Robots.txt")</legend>
+    <div>
+        @Html.LabelFor(m => m.RobotsText, @T("Enter robots.txt content below"))
+        @Html.TextAreaFor(m => m.RobotsText, new { rows = "21" })
+        @Html.ValidationMessageFor(m => m.RobotsText)
+        <div class="hint">
+            Robots.txt is accessible at <a href="@robotsUrl" target="_blank">@robotsUrl</a>.
+            For more details, check out this <a href="http://www.robotstxt.org/robotstxt.html">explanation of the robots exclusion protocol</a>.
+        </div>
+    </div>
+</fieldset>

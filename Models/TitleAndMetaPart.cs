@@ -1,6 +1,9 @@
 ﻿using Orchard.ContentManagement;
+using Orchard.Environment.Extensions;
 
 namespace Berry.SEOKit.Models {
+
+    [OrchardFeature("Berry.SEOKit")]
     public class TitleAndMetaPart : ContentPart {
         public string Title {
             get { return this.Retrieve(p => p.Title); }

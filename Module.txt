@@ -8,3 +8,8 @@ Description: SEO Kit provides a collection of tools to help with search engine o
 FeatureName: SEO Title and Meta
 Category: SEO
 FeatureDescription: Define title and meta tags for content items.
+Features:
+    Berry.Robots:
+        Name: Robots Configuration
+        Description: Configure a robots.txt file and expose it from root of the site.
+		Category: SEO

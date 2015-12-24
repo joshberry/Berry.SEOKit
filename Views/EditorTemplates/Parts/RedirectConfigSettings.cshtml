@@ -1,0 +1,17 @@
+﻿@model Berry.SEOKit.Models.RedirectConfigSettingsPart
+
+@{
+    var robotsUrl = Url.Action("Index", new { controller = "Redirects", area = "Berry.SEOKit" });
+}
+
+<fieldset>
+    <legend>@T("Redirects")</legend>
+    <div>
+        @Html.LabelFor(m => m.RedirectRules, @T("Enter redirect rules below."))
+        @Html.TextAreaFor(m => m.RedirectRules, new { rows = "21" })
+        @Html.ValidationMessageFor(m => m.RedirectRules)
+        <div class="hint">
+            Redirect rules should be entered one per line, with a comma seperating the request url and redirect url. For example: "/path-to-redirect, /redirected-path". Invalid rules will be ignored.
+        </div>
+    </div>
+</fieldset>

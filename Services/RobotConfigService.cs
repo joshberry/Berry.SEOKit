@@ -18,10 +18,5 @@ namespace Berry.SEOKit.Services {
             var robotSettings = _services.WorkContext.CurrentSite.As<RobotConfigSettingsPart>();
             return robotSettings.RobotsText;
         }
-
-        public void SaveRobotsText(string robotsText) {
-            var robotSettings = _services.WorkContext.CurrentSite.As<RobotConfigSettingsPart>();
-            robotSettings.RobotsText = robotsText;
-        }
     }
 }

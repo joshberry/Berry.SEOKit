@@ -13,3 +13,7 @@ Features:
         Name: Robots Configuration
         Description: Configure a robots.txt file and expose it from root of the site.
 		Category: SEO
+	Berry.Redirects:
+        Name: URL Redirects Configuration
+        Description: Configure URL redirects for requests to the site.
+		Category: SEO

@@ -17,7 +17,9 @@
         <div>
             @Html.TextBoxFor(model => model.Title, new { @class = "medium text" })
             <div class="hint">Provide an accurate and concise (less than 50-60 characters) description of the page for use in the title tag. For more details, check out this <a href="https://moz.com/learn/seo/title-tag">explanation of the title tag</a>.</div>
-            <div class="hint">Leave empty to use default title: @settings.DefaultTitle</div>
+            @if (!string.IsNullOrWhiteSpace(settings.DefaultTitle)) {
+                <div class="hint">Leave empty to use default title: @settings.DefaultTitle</div>
+            }
             @Html.ValidationMessageFor(model => model.Title)
         </div>
                 }
@@ -29,7 +31,9 @@
         <div>
             @Html.TextBoxFor(model => model.Description, new { @class = "large text" })
             <div class="hint">Provide a short paragraph (150-160 characters) letting searchers know what your content is about for use in the meta description tag. For more details, check out this <a href="https://moz.com/learn/seo/meta-description">explanation of the meta description tag</a>.</div>
-            <div class="hint">Leave empty to use default description: @settings.DefaultDescription</div>
+            @if(!string.IsNullOrWhiteSpace(settings.DefaultDescription)) {
+                    <div class="hint">Leave empty to use default description: @settings.DefaultDescription</div>
+            }
             @Html.ValidationMessageFor(model => model.Description)
         </div>
                 }

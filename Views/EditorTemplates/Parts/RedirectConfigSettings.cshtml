@@ -11,7 +11,13 @@
         @Html.TextAreaFor(m => m.RedirectRules, new { rows = "21" })
         @Html.ValidationMessageFor(m => m.RedirectRules)
         <div class="hint">
-            Redirect rules should be entered one per line, with a comma seperating the request url and redirect url. For example: "/path-to-redirect, /redirected-path". Invalid rules will be ignored.
+            Redirect rules should be entered one per line, with a comma seperating the request URL and redirect URL. 
+            For example: "/path-to-redirect, /redirected-path". 
+            <br />
+            Rules will match if the actual request URL starts with a rule's defined request URL. 
+            Rules are evaluated in the order they are entered with later rules taking precedent over previous ones. 
+            <br />
+            Invalid rules will be ignored.
         </div>
     </div>
 </fieldset>

@@ -26,10 +26,12 @@ namespace Berry.SEOKit.Filters {
 
             var rules = _redirectService.GetRedirectRules();
             string requestUrl = filterContext.HttpContext.Request.Url.PathAndQuery.ToLower();
-            var matchingRule = rules.SingleOrDefault(r => r.MatchUrl == requestUrl);
+            var matchingRule = rules.FirstOrDefault(r => requestUrl.StartsWith(r.MatchUrl));
 
             if(matchingRule != null) {
-                filterContext.Result = new RedirectResult(matchingRule.RedirectUrl, true);
+                // Append querystring to redirect url
+                var query = filterContext.HttpContext.Request.Url.Query;
+                filterContext.Result = new RedirectResult(matchingRule.RedirectUrl + query, true);
             }
         }
     }

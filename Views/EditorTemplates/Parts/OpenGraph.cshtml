@@ -1,0 +1,78 @@
+﻿@using Berry.SEOKit.Models
+@using Berry.SEOKit.Settings
+
+@model OpenGraphPart
+
+@{
+    var settings = Model.TypePartDefinition.Settings.GetModel<OpenGraphPartSettings>();
+}
+
+<fieldset>
+    <legend>Open Graph Meta Data</legend>
+
+    @if (settings.AllowTitle) {
+        <div>
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Title, new { @class = "medium text" })
+            @if (!string.IsNullOrWhiteSpace(settings.DefaultTitle)) {
+                <div class="hint">Leave empty to use default title: @settings.DefaultTitle</div>
+            }
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+    }
+
+    @if (settings.AllowDescription) {
+        <div>
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Description, new { @class = "large text" })
+            @if (!string.IsNullOrWhiteSpace(settings.DefaultDescription)) {
+                <div class="hint">Leave empty to use default description: @settings.DefaultDescription</div>
+            }
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+    }
+
+    @if (settings.AllowUrl) {
+        <div>
+            @Html.LabelFor(model => model.Url)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Url, new { @class = "large text" })
+            @if (!string.IsNullOrWhiteSpace(settings.DefaultUrl)) {
+                <div class="hint">Leave empty to use default description: @settings.DefaultUrl</div>
+            }
+            @Html.ValidationMessageFor(model => model.Url)
+        </div>
+    }
+
+    @if (settings.AllowImage) {
+        <div>
+            @Html.LabelFor(model => model.Image)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.Image, new { @class = "large text" })
+            @if (!string.IsNullOrWhiteSpace(settings.DefaultImage)) {
+                <div class="hint">Leave empty to use default description: @settings.DefaultImage</div>
+            }
+            @Html.ValidationMessageFor(model => model.Image)
+        </div>
+    }
+
+    @if (settings.AllowSiteName) {
+        <div>
+            @Html.LabelFor(model => model.SiteName)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.SiteName, new { @class = "large text" })
+            @if (!string.IsNullOrWhiteSpace(settings.DefaultSiteName)) {
+                <div class="hint">Leave empty to use default description: @settings.DefaultSiteName</div>
+            }
+            @Html.ValidationMessageFor(model => model.SiteName)
+        </div>
+    }
+
+</fieldset>

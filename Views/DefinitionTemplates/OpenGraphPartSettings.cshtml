@@ -1,0 +1,74 @@
+﻿@model Berry.SEOKit.Settings.OpenGraphPartSettings
+<fieldset>
+    <div>
+        @Html.LabelFor(m => m.DefaultTitle, T("Default Title Value"))
+        @Html.TextBoxFor(m => m.DefaultTitle, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultTitle)
+        @Html.Hint(T("The default Open Graph title. Tokens can be used to dynamically build the title."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowTitle)
+        @Html.LabelFor(m => m.AllowTitle, T("Allow Title Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default Open Graph title can be manually overriden on each content item."))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DefaultType, T("Default Type Value"))
+        @Html.TextBoxFor(m => m.DefaultType, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultType)
+        @Html.Hint(T("The default Open Graph type. Tokens can be used to dynamically build the type."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowType)
+        @Html.LabelFor(m => m.AllowType, T("Allow Type Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default Open Graph type can be manually overriden on each content item."))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DefaultUrl, T("Default URL Value"))
+        @Html.TextBoxFor(m => m.DefaultUrl, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultUrl)
+        @Html.Hint(T("The default Open Graph url. Tokens can be used to dynamically build the url."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowUrl)
+        @Html.LabelFor(m => m.AllowUrl, T("Allow URL Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default Open Graph url can be manually overriden on each content item."))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DefaultImage, T("Default Image Value"))
+        @Html.TextBoxFor(m => m.DefaultImage, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultImage)
+        @Html.Hint(T("The default Open Graph image. Tokens can be used to dynamically build the image."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowImage)
+        @Html.LabelFor(m => m.AllowImage, T("Allow Image Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default Open Graph image can be manually overriden on each content item."))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DefaultDescription, T("Default Description Value"))
+        @Html.TextBoxFor(m => m.DefaultDescription, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultDescription)
+        @Html.Hint(T("The default Open Graph description. Tokens can be used to dynamically build the description."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowDescription)
+        @Html.LabelFor(m => m.AllowDescription, T("Allow Description Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default Open Graph description can be manually overriden on each content item."))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.DefaultSiteName, T("Default Site Name Value"))
+        @Html.TextBoxFor(m => m.DefaultSiteName, new { @class = "text large tokenized" })
+        @Html.ValidationMessageFor(m => m.DefaultSiteName)
+        @Html.Hint(T("The default Open Graph site name. Tokens can be used to dynamically build the site name."))
+    </div>
+    <div>
+        @Html.CheckBoxFor(m => m.AllowSiteName)
+        @Html.LabelFor(m => m.AllowSiteName, T("Allow Site Name Override").Text, new { @class = "forcheckbox" })
+        @Html.Hint(T("If checked, default Open Graph site name can be manually overriden on each content item."))
+    </div>
+</fieldset>

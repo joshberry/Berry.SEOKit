@@ -94,14 +94,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\RobotsController.cs" />
+    <Compile Include="Drivers\OpenGraphDriver.cs" />
     <Compile Include="Drivers\TitleAndMetaDriver.cs" />
     <Compile Include="Filters\RedirectFilter.cs" />
     <Compile Include="Handlers\RedirectConfigSettingsPartHandler.cs" />
     <Compile Include="Handlers\RobotConfigSettingsPartHandler.cs" />
+    <Compile Include="Migrations\OpenGraphMigrations.cs" />
     <Compile Include="Migrations\TitleAndMetaMigrations.cs" />
     <Compile Include="Models\RedirectConfigSettingsPart.cs" />
     <Compile Include="Models\RedirectRule.cs" />
     <Compile Include="Models\RobotConfigSettingsPart.cs" />
+    <Compile Include="Models\OpenGraphPart.cs" />
     <Compile Include="Models\TitleAndMetaPart.cs" />
     <Compile Include="Routes\RobotsRoutes.cs" />
     <Compile Include="Services\IRedirectConfigService.cs" />
@@ -110,6 +113,8 @@
     <Compile Include="Services\PageTitleService.cs" />
     <Compile Include="Services\RedirectConfigService.cs" />
     <Compile Include="Services\RobotConfigService.cs" />
+    <Compile Include="Settings\OpenGraphPartSettings.cs" />
+    <Compile Include="Settings\OpenGraphSettingsHooks.cs" />
     <Compile Include="Settings\TitleAndMetaSettingsHooks.cs" />
     <Compile Include="Settings\TitleAndMetaPartSettings.cs" />
     <Compile Include="ShapeProviders\LayoutShapeProvider.cs" />
@@ -138,6 +143,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\RedirectConfigSettings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DefinitionTemplates\OpenGraphPartSettings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\EditorTemplates\Parts\OpenGraph.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

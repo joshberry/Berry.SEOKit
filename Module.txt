@@ -17,3 +17,7 @@ Features:
         Name: URL Redirects Configuration
         Description: Configure URL redirects for requests to the site.
 		Category: SEO
+	Berry.OpenGraph:
+        Name: Open Graph Meta Data
+        Description: Define Open Graph social meta data tags for content item.
+		Category: SEO

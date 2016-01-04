@@ -11,7 +11,7 @@ namespace Berry.SEOKit.Services {
         }
 
         public string GetTitle() {
-            return HttpContext.Current.Items["Berry.SEOKit.Title"].ToString();
+            return HttpContext.Current.Server.HtmlDecode(HttpContext.Current.Items["Berry.SEOKit.Title"].ToString());
         }
     }
 }

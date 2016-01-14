@@ -7,6 +7,7 @@ using Orchard.ContentManagement.Handlers;
 using Orchard.Environment.Extensions;
 using Orchard.Tokens;
 using Orchard.UI.Resources;
+using System.Collections.Generic;
 using System.Web;
 
 namespace Berry.SEOKit.Drivers {
@@ -30,26 +31,15 @@ namespace Berry.SEOKit.Drivers {
 
             var settings = part.TypePartDefinition.Settings.GetModel<TitleAndMetaPartSettings>();
 
+            var resolvedTokens = _tokenizer.Evaluate(new string[] { "Content.MetaDescription", "Content.PageTitle" }, new Dictionary<string, object> { { "Content", part.ContentItem } });
+            
             // Add the page title to items dictionary for use in layout wrapper
-            string title = null;
-            if (settings.AllowTitle && !string.IsNullOrWhiteSpace(part.Title)) {
-                title = part.Title;
-            } else if (!string.IsNullOrWhiteSpace(settings.DefaultTitle)) {
-                title = _tokenizer.Replace(settings.DefaultTitle, new { Content = part.ContentItem });
-            }
+            string title = resolvedTokens["Content.PageTitle"].ToString();
             HttpContext.Current.Items.Add("Berry.SEOKit.Title", title);
 
             // Set meta data
             var resourceManager = _wca.GetContext().Resolve<IResourceManager>();
-
-            string description = null;
-
-            if (settings.AllowDescription && !string.IsNullOrWhiteSpace(part.Description)) {
-                description = part.Description;
-            } else if (!string.IsNullOrWhiteSpace(settings.DefaultDescription)) {
-                description = _tokenizer.Replace(settings.DefaultDescription, new { Content = part.ContentItem });
-            }
-
+            string description = resolvedTokens["Content.MetaDescription"].ToString();
             if (!string.IsNullOrWhiteSpace(description)) {
                 resourceManager.SetMeta(new MetaEntry {
                     Name = "description",

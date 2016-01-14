@@ -25,10 +25,15 @@ namespace Berry.SEOKit.Filters {
         public void OnActionExecuting(ActionExecutingContext filterContext) {
 
             var rules = _redirectService.GetRedirectRules();
-            string requestUrl = filterContext.HttpContext.Request.Url.PathAndQuery.ToLower();
-            var matchingRule = rules.FirstOrDefault(r => requestUrl.StartsWith(r.MatchUrl));
+            string requestUrl = filterContext.HttpContext.Request.Url.LocalPath.ToLower();
+            var matchingRule = rules.FirstOrDefault(r => {
+                if (r.MatchUrl.EndsWith("*")) {
+                    return requestUrl.StartsWith(r.MatchUrl.Replace("*",""));
+                }
+                return r.MatchUrl == requestUrl;
+            });
 
-            if(matchingRule != null) {
+            if (matchingRule != null) {
                 // Append querystring to redirect url
                 var query = filterContext.HttpContext.Request.Url.Query;
                 filterContext.Result = new RedirectResult(matchingRule.RedirectUrl + query, true);

@@ -118,6 +118,7 @@
     <Compile Include="Settings\TitleAndMetaSettingsHooks.cs" />
     <Compile Include="Settings\TitleAndMetaPartSettings.cs" />
     <Compile Include="ShapeProviders\LayoutShapeProvider.cs" />
+    <Compile Include="Tokens\TitleAndMetaTokens.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.md" />
